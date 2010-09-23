@@ -1,10 +1,58 @@
 <html>
     <head>
-        <title>Government data search'o'meter in FluidDB</title>
-        <link type="text/css" href="style.css" rel=Stylesheet" />
+        <title>Government metadata search'o'meter in FluidDB</title>
+        <link type="text/css" href="style.css" rel="Stylesheet" />
     </head>
     <body>
-        <div id="reading">Foo</div>
+        <div class="header">
+            <div class="container">
+                <div class="headline">
+                    <h1>Government Linked Metadata Search'o'Meter</h1>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="picture">
+                    <img src="openlinkedgovtdata.png" alt="Open linked Government data"/>
+                    <p>
+                        Image &copy;
+                        <a href="http://www.flickr.com/photos/opensourceway/4371001268/">opensourceway</a> 
+                        <a href="http://creativecommons.org/licenses/by-sa/2.0/deed.en_GB" rel="license">by-sa</a>
+                    </p>
+                </div>
+                <div class="explanation">
+                    <p>
+                        FluidDB contains metadata from
+                        <a href="http://data.gov">data.gov</a> and 
+                        <a href="http://data.gov.uk/">data.gov.uk</a>. 
+                    </p>
+                    <p>
+                        This web-application demonstrates the power of
+                        FluidDB's simple yet powerful query language.
+                    </p>
+                    <p>
+                        Of course, you also get the instant 
+                        <a href="http://api.fluidinfo.com/fluidDB/api/">RESTful
+                        API</a> and the opportunity to annotate, augment and add to the
+                        data represented herein.
+                    </p>
+                </div>
+                <div class="search">
+                    <form method="POST" action="#/search">
+                        <label for="search">Search:</label>
+                        <input size="55" type="text" name="search"
+                        id="search_box"/>
+                        <input type="submit" value="Submit"/>
+                    </form>
+                </div>
+                <div id="results">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>The source code for this page is &copy; 2010 Fluidinfo Inc.</p>
+        </div>
         <script type="text/javascript" src="jquery-1.4.2.min.js"></script> 
         <script type="text/javascript" src="fluiddb.js"></script> 
         <script type="text/javascript"> 
