@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Government data search'o'meter in FluidDB</title>
+        <link type="text/css" href="style.css" rel=Stylesheet" />
+    </head>
+    <body>
+        <div id="reading">Foo</div>
+        <script type="text/javascript" src="jquery-1.4.2.min.js"></script> 
+        <script type="text/javascript" src="fluiddb.js"></script> 
+        <script type="text/javascript"> 
+        //<![CDATA[
+            $(document).ready(function(){
+                // Grab the moisture value from FluidDB
+                fluidDB.get('objects/1f23e428-1c57-48a1-9ae8-8891b4306c6f/data.gov/meta/Description',
+                    function(data) {
+                        $('#reading').html(data)
+                    },
+                    true)
+            });
+        //]]>
+        </script>
+    </body>
+</html>
