@@ -23,17 +23,19 @@
             $('#loading').hide();
             $search_results.empty();
             // add the results
-            $search_results.append('<h2>Results</h2><p>Objects with the following ids match your query:</p>');
+            $search_results.append('<h2>Results</h2>');
             if (data.ids.length>0) {
-                var ol = "";
-                for(o in data.ids) {
-                    var obj_id = data.ids[o];
-                    ol = ol + '<div class="result"><a href="#/show?id='+obj_id+'">'+obj_id+'</a></div>'
+                for(item in data.ids) {
+                    object_id = data.ids[item];
+                    fluidDB.get('objects/'+object_id+'/fluiddb/about', function(data){display_item(data, object_id, $search_results);}, true);
                 }
-                $search_results.append(ol);
             } else {
                 $search_results.append('<div>None found. Please try again...</div>');
             }
+        }
+
+        function display_item(data, object_id, $search_results){
+            $search_results.append('<div>'+data+'</div>');
         }
 
         /**********************************************************************
@@ -54,7 +56,7 @@
             if (search_term.length > 0) {
                 try {
                     $('#loading').show();
-                    fluidDB.get('objects?query='+escape(search_term), function(data){search_results(data, context);}, true, context.auth);
+                    fluidDB.get('objects?query='+escape(search_term), function(data){search_results(data, context);}, true);
                 }
                 catch (err) {
                     $('#loading').hide();
@@ -76,7 +78,7 @@
                     // update the UI and get the search request from FluidDB
                     $('#loading').show();
                     $("#search_box").val(search_term.replace("%20"," "));
-                    fluidDB.get('objects?query='+search_term, function(data){search_results(data, context);}, true, context.auth);
+                    fluidDB.get('objects?query='+search_term, function(data){search_results(data, context);}, true);
                 }
                 catch (err) {
                     $('#loading').hide();
