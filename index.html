@@ -45,8 +45,11 @@
                         id="search_box"/>
                         <input type="submit" value="Submit"/>
                     </form>
+                    <div id="loading" style="display: none;">
+                        <img src="images/ajax-loader.gif" alt="Working..."/>
+                    </div>
                 </div>
-                <div id="results">
+                <div id="search_results">
                 </div>
             </div>
         </div>
@@ -55,17 +58,7 @@
         </div>
         <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script> 
         <script type="text/javascript" src="js/fluiddb.js"></script> 
-        <script type="text/javascript"> 
-        //<![CDATA[
-            $(document).ready(function(){
-                // Grab the moisture value from FluidDB
-                fluidDB.get('objects/1f23e428-1c57-48a1-9ae8-8891b4306c6f/data.gov/meta/Description',
-                    function(data) {
-                        $('#reading').html(data)
-                    },
-                    true)
-            });
-        //]]>
-        </script>
+        <script type="text/javascript" src="js/sammy.js"></script>
+        <script type="text/javascript" src="app.js"></script>
     </body>
 </html>
