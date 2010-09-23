@@ -15,11 +15,11 @@ Where..?
 
 Within the project you'll find the following files:
 
-index.html - the markup for displaying the web-application
-style.css - defines the look of the web-application
-app.js - contains the application logic
-images/ - image files
-js/ - javascript files used by app.js (sammy.js and fluiddb.js)
+* index.html - the markup for displaying the web-application
+* style.css - defines the look of the web-application
+* app.js - contains the application logic
+* images/ - image files
+* js/ - javascript files used by app.js (sammy.js and fluiddb.js)
 
 How..?
 ++++++
